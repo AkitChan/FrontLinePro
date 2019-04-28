@@ -7,19 +7,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context="cn.akit.frontlinepro.MainActivity">
 
     <TextView
         android:id="@+id/tv_okay"
         android:layout_width="match_parent"
         android:layout_height="100dp"/>
 
-    <ImageView
-        android:id="@+id/iv_launch"
-        android:src="@mipmap/ic_launcher"
-        android:layout_width="60dp"
-        android:scaleType="fitXY"
-        android:layout_height="180dp"/>
+    <TextView
+        android:onClick="toImageDtlScale"
+        android:text="ToImageDtlScale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +26,7 @@
         android:orientation="horizontal"
         tools:visibility="gone">
 
-        <com.dongshang.mactivity.myapplication.DongShanCircleImageView
+        <cn.akit.frontlinepro.DongShanCircleImageView
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:src="@mipmap/water_icon1024x1024"/>
@@ -40,7 +39,9 @@
 
     </LinearLayout>
 
-    <com.dongshang.mactivity.myapplication.center.CenterTabLayout
+
+
+    <cn.akit.frontlinepro.CenterTabLayout
         android:id="@+id/layout_tab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,9 +52,9 @@
         app:tabIndicatorHeight="0dp"
         app:tabBackground="@drawable/selector">
 
-    </com.dongshang.mactivity.myapplication.center.CenterTabLayout>
+    </cn.akit.frontlinepro.CenterTabLayout>
 
-    <com.dongshang.mactivity.myapplication.waveform.WaveFormThumbView
+    <cn.akit.frontlinepro.waveform.WaveFormThumbView
         android:id="@+id/wave_form_thumb_view"
         android:layout_width="200dp"
         android:layout_height="100dp"
@@ -64,7 +65,7 @@
         app:wf_waveform_wave_width="1dp"/>
 
 
-    <android.support.v4.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

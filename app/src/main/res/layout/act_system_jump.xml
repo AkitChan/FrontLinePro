@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+
+    <TextView
+        style="@style/NormalTextStyle"
+        android:onClick="toSettings"
+        android:text="设置"/>
+
+
+    <TextView
+        style="@style/NormalTextStyle"
+        android:onClick="toAppNotification"
+        android:text="app通知"/>
+
+    <TextView
+        style="@style/NormalTextStyle"
+        android:onClick="toPermission"
+        android:text="权限设置"/>
+
+    <TextView
+        style="@style/NormalTextStyle"
+        android:onClick="toNotificationChannel"
+        android:text="NotificationChannel"/>
+
+    <TextView
+        style="@style/NormalTextStyle"
+        android:onClick="toNotification"
+        android:text="通知"/>
+
+</LinearLayout>

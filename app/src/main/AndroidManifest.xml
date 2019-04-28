@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.dongshang.mactivity.myapplication">
+          package="cn.akit.frontlinepro">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!--<uses-permission android:name=""-->
+    <!--<uses-permission android:name="android.permission.MANA"-->
+    <uses-permission android:name="android.Manifest.permission.GRANT_RUNTIME_PERMISSIONS"/>
 
     <application
         android:allowBackup="true"
@@ -8,8 +13,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".App"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainAct" android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -17,7 +23,25 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ImageDetailAct"></activity>
+
+        <activity android:name=".ShareReceiveAct">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <action android:name="android.intent.action.SEND_MULTIPLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <!-- 	指定分享类型,我这边只能分享video/mp4,image/* -->
+                <data android:mimeType="video/mp4"/>
+                <data android:mimeType="image/*" />
+                <data android:mimeType="text/*" />
+                <data android:mimeType="audio/*" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".PreloadAct"/>
+        <activity android:name=".NotificationAct"/>
+        <activity android:name=".SystemJumpAct"/>
+
+
     </application>
 
 </manifest>

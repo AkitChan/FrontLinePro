@@ -1,1 +1,1 @@
-include ':app', ':imagedtlscale'
+include ':app', ':imagedtlscale', ':common', ':designmode'

@@ -1,15 +1,21 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'//启用扩展支持直接使用ID
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion compile_sdk_version.toInteger()
     defaultConfig {
-        applicationId "com.dongshang.mactivity.myapplication"
-        minSdkVersion 18
-        targetSdkVersion 28
+        applicationId "cn.akit.frontlinepro"
+        minSdkVersion min_sdk_version.toInteger()
+        targetSdkVersion target_sdk_version.toInteger()
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
     buildTypes {
         release {
@@ -23,14 +29,25 @@ android {
 dependencies {
     implementation 'com.alibaba:fastjson:1.1.55.android'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha04'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha4'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test:runner:1.2.0-alpha03'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-alpha03'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.android.support:cardview-v7:28.0.0'
-    implementation 'com.android.support:design:28.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.material:material:1.1.0-alpha05'
+//    implementation 'com.alibaba:arouter-annotation:1.0.5'
+    implementation 'com.alibaba:arouter-api:1.4.0'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+    implementation 'pub.devrel:easypermissions:2.0.0'
+    implementation project(':common')
+    if (isModuleMode.toBoolean()) {
+        implementation project(':imagedtlscale')
+    }
+    if (isModuleMode.toBoolean()) {
+        implementation project(':designmode')
+    }
 }
 repositories {
     mavenCentral()
