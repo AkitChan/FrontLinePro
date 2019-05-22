@@ -1,4 +1,4 @@
-package cn.akit.frontlinepro;
+package cn.akit.frontlinepro.act;
 
 import android.content.Intent;
 import android.database.Cursor;

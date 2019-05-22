@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import cn.akit.frontlinepro.act.*
 import cn.akit.frontlinepro.common.base.BaseAct
 import cn.akit.frontlinepro.common.base.BaseAdapter
 import cn.akit.frontlinepro.common.base.BaseViewHolder
@@ -31,6 +32,9 @@ class MainAct : BaseAct() {
         NOTIFICATION("notification"),
         SYSTEM_JUMP("system_jump"),
         EXTERNAL_APP("open_external_app"),
+        ENCRYPT("encrypt"),
+        URL_IN_TEXT_VIEW("url_in_text_view"),
+        HANDLER("handler"),
     }
 
     override fun init() {
@@ -42,6 +46,9 @@ class MainAct : BaseAct() {
         list.add(Type.NOTIFICATION)
         list.add(Type.SYSTEM_JUMP)
         list.add(Type.EXTERNAL_APP)
+        list.add(Type.ENCRYPT)
+        list.add(Type.URL_IN_TEXT_VIEW)
+        list.add(Type.HANDLER)
     }
 
     private fun initRecycleView() {
@@ -74,12 +81,21 @@ class MainAct : BaseAct() {
             Type.EXTERNAL_APP -> {
                 externalApp()
             }
+            Type.ENCRYPT -> {
+                startActivity(Intent(this, EncryptAct::class.java))
+            }
+            Type.URL_IN_TEXT_VIEW -> {
+                startActivity(Intent(this, UrlInTextViewAct::class.java))
+            }
+            Type.HANDLER -> {
+                startActivity(Intent(this, HandlerAct::class.java))
+            }
         }
     }
 
     private fun externalApp() {
         try {
-            val intent = Intent(Intent.ACTION_VIEW,Uri.parse("scheme://donghills/welcome2?id=123666"))
+            val intent = Intent(Intent.ACTION_VIEW,Uri.parse("waterim://uat-im-qrcode.77877.site/welcome?token=hello"))
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
         } catch (e: Exception) {

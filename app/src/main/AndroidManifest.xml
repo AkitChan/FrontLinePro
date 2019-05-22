@@ -24,7 +24,7 @@
         </activity>
 
 
-        <activity android:name=".ShareReceiveAct">
+        <activity android:name=".act.ShareReceiveAct">
             <intent-filter>
                 <action android:name="android.intent.action.SEND"/>
                 <action android:name="android.intent.action.SEND_MULTIPLE"/>
@@ -37,9 +37,12 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".PreloadAct"/>
-        <activity android:name=".NotificationAct"/>
-        <activity android:name=".SystemJumpAct"/>
+        <activity android:name=".act.PreloadAct"/>
+        <activity android:name=".act.NotificationAct"/>
+        <activity android:name=".act.SystemJumpAct"/>
+        <activity android:name=".act.EncryptAct"/>
+        <activity android:name=".act.UrlInTextViewAct"/>
+        <activity android:name=".act.HandlerAct"/>
 
 
     </application>

@@ -1,7 +1,8 @@
-package cn.akit.frontlinepro
+package cn.akit.frontlinepro.act
 
 import android.os.Build
 import android.view.View
+import cn.akit.frontlinepro.R
 import cn.akit.frontlinepro.common.base.BaseAct
 import cn.akit.frontlinepro.common.utils.SystemJumpUtil
 

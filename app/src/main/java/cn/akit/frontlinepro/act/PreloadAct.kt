@@ -1,4 +1,4 @@
-package cn.akit.frontlinepro
+package cn.akit.frontlinepro.act
 
 import android.content.Context
 import android.os.CountDownTimer
@@ -7,6 +7,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import cn.akit.frontlinepro.R
 import cn.akit.frontlinepro.common.base.BaseAct
 import cn.akit.frontlinepro.common.base.BaseAdapter
 import cn.akit.frontlinepro.common.base.BaseViewHolder

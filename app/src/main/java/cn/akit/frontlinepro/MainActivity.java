@@ -147,6 +147,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
         mWaveFormThumbView = (WaveFormThumbView) findViewById(R.id.wave_form_thumb_view);
         mWaveFormThumbView.setOnDragThumbListener(new WaveFormThumbView.OnDragThumbListener() {
             @Override
