@@ -103,6 +103,10 @@ class MainAct : BaseAct() {
     }
 
 
+    private fun a(){
+        
+    }
+
     private fun startActivityByRouter(path: String) {
         ARouter.getInstance().build(path).navigation()
     }
