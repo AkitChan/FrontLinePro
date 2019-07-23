@@ -11,9 +11,12 @@ import cn.akit.frontlinepro.act.*
 import cn.akit.frontlinepro.common.base.BaseAct
 import cn.akit.frontlinepro.common.base.BaseAdapter
 import cn.akit.frontlinepro.common.base.BaseViewHolder
+import com.alibaba.android.arouter.launcher.ARouter
 import com.socks.library.KLog
-import kotlinx.android.synthetic.main.act_preload.*
+import kotlinx.android.synthetic.main.act_main.*
+import kotlinx.android.synthetic.main.act_preload.rv_list
 import kotlinx.android.synthetic.main.item_main_act.view.*
+import java.io.IOException
 
 /**
  * Created by chenYuXuan on 2019/4/24.
@@ -35,11 +38,13 @@ class MainAct : BaseAct() {
         ENCRYPT("encrypt"),
         URL_IN_TEXT_VIEW("url_in_text_view"),
         HANDLER("handler"),
+        BACKUP_MODE("BACKUP_MODE"),
     }
 
     override fun init() {
         initList()
         initRecycleView()
+        pintTest()
     }
 
     private fun initList() {
@@ -49,6 +54,7 @@ class MainAct : BaseAct() {
         list.add(Type.ENCRYPT)
         list.add(Type.URL_IN_TEXT_VIEW)
         list.add(Type.HANDLER)
+        list.add(Type.BACKUP_MODE)
     }
 
     private fun initRecycleView() {
@@ -90,19 +96,90 @@ class MainAct : BaseAct() {
             Type.HANDLER -> {
                 startActivity(Intent(this, HandlerAct::class.java))
             }
+            Type.BACKUP_MODE -> {
+
+            }
         }
     }
 
+
+    private fun startActivityByRouter(path: String) {
+        ARouter.getInstance().build(path).navigation()
+    }
+
+
     private fun externalApp() {
         try {
-            val intent = Intent(Intent.ACTION_VIEW,Uri.parse("waterim://uat-im-qrcode.77877.site/welcome?token=hello"))
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("waterim://uat-im-qrcode.77877.site/welcome?token=hello"))
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
         } catch (e: Exception) {
             e.printStackTrace()
             //
             KLog.debug("无法找到app")
-            Toast.makeText(this,"无法找到app",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "无法找到app", Toast.LENGTH_SHORT).show()
         }
     }
+
+
+    val sb = StringBuffer()
+    var index = 0
+
+    fun pintTest() {
+        val hostList = arrayOf("im.2233pro.com", "im2.2233pro.com", "im3.2233pro.com","im4.2233pro.com","im.1133pro.com","google.com")
+
+        Thread(Runnable {
+            while (true) {
+                for (s in hostList) {
+                    Thread(Runnable {
+                        val i = index
+                        val time = System.currentTimeMillis()
+                        try {
+                            isAvailableByPing(i,s,time)
+                            tv_content.post {
+                                tv_content.text = sb.toString()
+                            }
+                        } catch (e: Exception) {
+                            e.printStackTrace()
+                            print("异常：" + e.message)
+                            sb.append("Index $i Host " + s + " Duration " + (System.currentTimeMillis() - time) + " (异常)\n")
+                            tv_content.post {
+                                tv_content.text = sb.toString()
+                            }
+                        }
+                    }).start()
+                }
+
+
+                index++
+
+                Thread.sleep(500)
+            }
+        }).start()
+
+    }
+
+
+    @Throws(IOException::class,InterruptedException::class)
+    fun isAvailableByPing(i:Int,ip: String?,time:Long): Boolean {
+        var ip = ip
+        if (ip == null || ip.length <= 0) {
+            return false
+        }
+
+        val runtime = Runtime.getRuntime()
+        var ipProcess: Process? = null
+        try {
+            //-c 后边跟随的是重复的次数，-w后边跟随的是超时的时间，单位是秒，不是毫秒，要不然也不会anr了
+            ipProcess = runtime.exec("ping -c 3 -w 3 $ip")
+            val exitValue = ipProcess!!.waitFor()
+            sb.append("Index $i Host " + ip + " Duration " + (System.currentTimeMillis() - time)+" net " + exitValue + "\n")
+            return exitValue == 0
+        } finally {
+            //在结束的时候应该对资源进行回收
+            ipProcess?.destroy()
+            runtime.gc()
+        }
+    }
+
 }

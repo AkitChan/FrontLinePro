@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tother Chat</string>
+    <string name="app_name_low">totherchat</string>
+    <string name="ds_app_name">Tother Chat</string>
+    <string name="web_logined">已登录网页版Tother Chat</string>
+    <string name="web_logout">退出网页Tother Chat</string>
+    <string name="register_explain">您可以通过手机号码更新登录密钥，请输入在用号码以便找回账号。同意Tother Chat的 服务条款 及 隐私政策，请点击[下一步]按钮。</string>
+    <string name="you_confirm_exit" translatable="false">你确定退出Tother Chat吗？</string>
+    <string name="regis_account_next">您可以通过手机号码更新登录密钥，请输入在用号码以便找回账号。同意Tother Chat的 服务条款 及 隐私政策，请点击[下一步]按钮。</string>
+    <string name="video_str" translatable="false">Tother Chat实时视频通话</string>
+    <string name="invite_to_chat" translatable="false">邀请好友一齐加入Tother Chat吧</string>
+    <string name="chat_service" translatable="false">Tother Chat服务</string>
+    <string name="_wChatID" translatable="false">WID</string>
+    <string name="_ChatID" translatable="false">WID:</string>
+    <string name="app_running">Tother Chat正在后台运行</string>
+    <string name="vesion" translatable="false">Tother Chat版本:</string>
+    <string name="myChatName" translatable="false">Tother Chat</string>
+    <string name="admin_name" translatable="false">Tother Chat管理员</string>
+    <string name="query_quit_web">是否退出网页Tother Chat？</string>
+    <string name="can_invite_more_people" translatable="false">可邀请更多用户使用Tother Chat</string>
+    <string name="wchat_web">Tother Chat网页版</string>
+    <string name="calling">Tother Chat实时视频通话</string>
+    <string name="real_voice">Tother Chat实时语音通话</string>
+    <string name="syn_phone_contacts_success">已为您成功匹配了%s联系人，并添加至您的Tother Chat通讯录中</string>
+    <string name="come_wchat" translatable="false">我正在用Tother Chat，聊天内容保密，速来！Tother Chat下载：</string>
+    <string name="web_login2">app.Tother Chat.site</string>
+    <string name="web_login3">并打开手机上Tother Chat的扫一扫，\n扫描屏幕上的二维码</string>
+    <string name="login_query">网页版Tother Chat登录确认</string>
+    <string name="admin_fun" translatable="false">Tother Chat的官方账号</string>
+    <string name="you_running" translatable="false">Tother Chat正在运行</string>
+    <string name="text_permission_apply_banner_huawei">在设置/应用/Tother Chat/通知管理中开启“横幅”权限,以便Tother Chat能实时显示新消息。</string>
+    <string name="text_permission_apply_banner_oppo">在设置/应用/Tother Chat/通知管理中开启“在屏幕顶部显示”权限,以便Tother Chat能实时显示新消息。</string>
+    <string name="text_permission_apply_banner_xiaomi">在设置/应用/Tother Chat/通知管理中开启“悬浮通知”权限,以便Tother Chat能实时显示新消息。</string>
+    <string name="text_permission_apply_banner_vivo">在设置/应用/Tother Chat/通知管理中开启“顶部预览”权限,以便Tother Chat能实时显示新消息。</string>
+    <string name="wchat_service">Tother Chat服务</string>
+    <string name="invite_friend" translatable="false">邀请好友一齐加入Tother Chat吧</string>
+    <string name="chatid_phone" translatable="false">WID/手机号</string>
+    <string name="safety_explain">你发送的信息和通话都会进行端到端加密，\n这可确保所有对话内容只有你和你的聊天对\n象才能看到或是听到，“点滴”和其他人都不能。 </string>
+    <string name="chatid_can_not_modify_after_setting" translatable="false">WID作为唯一的身份识别凭证，设置后不能更改</string>
+    <string name="chatid_existed1" translatable="false">WID：“</string>
+    <string name="chatid" translatable="false">WID:%1$s</string>
+    <string name="_chatid" translatable="false">WID:</string>
+    <string name="has_set_chatId" translatable="false">已设置WID</string>
+    <string name="wchatid_setting">设置WID</string>
+    <string name="my_wchat_id">我的WID：%s</string>
+    <string name="invalid_chatid" translatable="false">WID必须以字母开头，可以使用6~20个字母、数字、下划线和减号。</string>
+    <string name="has_Set_WchatID">已设置WID!</string>
+    <string name="wchat_ID">WID</string>
+    <string name="mwchat_ID" translatable="false">WID:</string>
+    <string name="im_bit" translatable="false">点滴</string>
+    <string name="hint_new_friend_search" translatable="false">名称/WID/手机号</string>
+    <string name="my_wchat_account">我的WID:%1$s</string>
+    <string name="wChatId" translatable="false">WID: </string>
+    <string name="wChatIdWithChar" translatable="false">WID: %s</string>
+
+</resources>

@@ -4,8 +4,6 @@ import android.app.Application;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 
-import cn.akit.frontlinepro.common.utils.NotificationHelper;
-
 /**
  * Created by chenYuXuan on 2019/4/13.
  * email : southxvii@163.com
@@ -30,8 +28,8 @@ public class App extends Application {
     }
 
     private void initNotification() {
-        NotificationHelper.init(this);
-        NotificationHelper.createNotificationChannel(this,true,true,0,null);
+//        NotificationHelper.init(this);
+//        NotificationHelper.createNotificationChannel(this,true,true,0,null);
     }
 
 }

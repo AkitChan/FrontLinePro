@@ -167,6 +167,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     public void toImageDtlScale(View view) {
         ARouter.getInstance().build("/test/activity").navigation();
     }
