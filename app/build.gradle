@@ -27,6 +27,17 @@ android {
 
 
 dependencies {
+    def room_version = "2.2.0-rc01"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version" // For Kotlin use kapt instead of annotationProcessor
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:$room_version"
+    // Test helpers
+    testImplementation "androidx.room:room-testing:$room_version"
+    implementation 'com.github.princekin-f:EasyFloat:1.1.3'
+
+    implementation 'com.tencent.wcdb:room:1.0.8'
+    implementation 'com.github.QuarkWorks:DynamicPagerAdapter-Android:0.9.6'
     implementation 'com.alibaba:fastjson:1.1.55.android'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.1.0-alpha04'
@@ -45,7 +56,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.github.promeg:tinypinyin:2.0.3'
     implementation 'com.squareup.retrofit2:retrofit:2.6.0'
-
+    implementation 'com.github.yhaolpz:FloatWindow:1.0.9'
 
     if (isModuleMode.toBoolean()) {
         implementation project(':imagedtlscale')

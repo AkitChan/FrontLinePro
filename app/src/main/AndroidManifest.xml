@@ -8,6 +8,57 @@
     <!--<uses-permission android:name="android.permission.MANA"-->
     <uses-permission android:name="android.Manifest.permission.GRANT_RUNTIME_PERMISSIONS"/>
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
+
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="ndroid.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!--<uses-permission-->
+        <!--android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"-->
+        <!--tools:ignore="ProtectedPermissions"/>-->
+    <!--<uses-permission-->
+        <!--android:name="android.permission.WRITE_SETTINGS"-->
+        <!--tools:ignore="ProtectedPermissions"/>-->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+    <!-- 读取联系人的权限 -->
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <!--<uses-permission-->
+        <!--android:name="android.permission.WRITE_SETTINGS"-->
+        <!--tools:ignore="ProtectedPermissions"/>-->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS"/>
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true"/>
 
     <application
         android:allowBackup="true"
@@ -16,6 +67,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:name=".App"
+        android:largeHeap="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainAct" android:launchMode="singleTask">
             <intent-filter>
@@ -25,6 +78,7 @@
             </intent-filter>
         </activity>
 
+        <service android:name="com.lzf.easyfloat.service.FloatService" />
 
         <activity android:name=".act.ShareReceiveAct">
             <intent-filter>
@@ -45,6 +99,9 @@
         <activity android:name=".act.EncryptAct"/>
         <activity android:name=".act.UrlInTextViewAct"/>
         <activity android:name=".act.HandlerAct"/>
+        <activity android:name=".act.VideoViewAct"/>
+        <activity android:name=".act.DynamicViewPagerAct"/>
+        <activity android:name=".act.FloatWindowAct" android:launchMode="singleInstance"/>
 
 
     </application>

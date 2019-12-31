@@ -1,6 +1,7 @@
 package cn.akit.frontlinepro;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 
@@ -13,7 +14,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
+        context = this.getApplicationContext();
 
         if (BuildConfig.DEBUG) {
             ARouter.openDebug();
@@ -22,6 +23,8 @@ public class App extends Application {
         ARouter.init(this);
         init();
     }
+
+    public static Context context;
 
     private void init() {
         initNotification();
